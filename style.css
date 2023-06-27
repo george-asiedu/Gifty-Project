@@ -6,13 +6,10 @@
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
-    --black-russian: #202124;
     --white: #fff;
-    --baltic-sea: #3C4043;
     --oregon-blue: #4F86E2;
     --prune-plum: #201640;
     --gold: #d5966c;
-    --very-deep-gold: #f07828;
     --very-dark-blue: #0B0D17;
     --very-light-blue: #D0D6F9;
 }
@@ -101,7 +98,6 @@ img {
 .nav li:hover::after {
     width: 100%;
 }
-
 
 /* Image sliders */
 .slider {
@@ -497,6 +493,99 @@ img {
     padding: 12rem 4% 4rem;
 }
 
+/* courses */
+.courses {
+    min-height: auto;
+    background: var(--bg-color);
+    padding: 8rem 4% 4rem;
+    width: 100%;
+}
+
+.courses .heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 0px;
+    color: var(--very-light-blue);
+}
+
+.courses .heading:hover {
+    color: var(--main-color);
+}
+
+.courses .preview {
+    color: var(--very-light-blue);
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: -5px;
+    margin-bottom: 5rem;
+    font-weight: 500;
+}
+
+.courses .courses-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.course-content {
+    background: var(--very-dark-blue);
+    height: auto;
+    padding: 3rem 4%;
+}
+
+.course-image {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem; 
+}
+
+.course-image img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
+
+.course-image .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--bg-color);
+    border-bottom: .2rem solid var(--bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
+}
+
+.course-content .course-text h4 {
+    color: var(--oregon-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.course-content .course-text p {
+    color: var(--very-light-blue);
+    width: 30rem;
+    font-size: 1rem;
+    line-height: 30px;
+    text-align: center;
+}
+
+
 /* about me page (education) */
 .education {
     min-height: auto;
@@ -858,4 +947,26 @@ img {
 
 .footer-iconTop a:hover i {
     color: var(--main-color);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .header .logo {
+        font-size: 2rem;
+    }
+
+   .nav li a {
+        display: none;
+   }
+
+    #closeMenu {
+        display: none;
+    }
+
+    .header .fa {
+        display: block;
+        font-size: 2rem;
+        color: var(--white);
+        cursor: pointer;
+    }
 }
