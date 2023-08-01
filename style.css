@@ -177,7 +177,7 @@ img {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 25.5rem;
+    width: 22rem;
     height: 4rem;
     margin-bottom: 6rem;
 }
@@ -585,6 +585,13 @@ img {
     text-align: center;
 }
 
+.btn-box.btns {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 /* about me page (education) */
 .education {
@@ -641,22 +648,6 @@ img {
     border-radius: .6rem;
     margin-bottom: 2rem;
     overflow: hidden;
-}
-
-.education-content .content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0; 
-    height: 100%;
-    background: var(--second-bg-color);
-    z-index: -1;
-    transition: .5rem;
-}
-
-.education-content .content:hover:before {
-    width: 100%;
 }
 
 .education-content .content .year {
@@ -793,26 +784,40 @@ img {
     width: 70%;
 }
 
-/* gallery page */
-.gallery-row {
-    min-height: auto;
+.gallery {
+    height: auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem 4px 5px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
   }
   
-  /* Create four equal columns that sits next to each other */
-.gallery-column {
+  .gallery-column {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
-}
+  }
   
-.gallery-column img {
+  .gallery-column img {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
-}
+  }
+  
+  @media (max-width: 600px) {
+    .gallery {
+      flex-direction: column;
+      margin-top: 5px;
+    }
+  
+    .gallery-column{
+      flex: 100%;
+      max-width: 100%;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+  }
 
 /* contact form */
 .contact {
@@ -898,7 +903,7 @@ img {
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 4%;
-    background: var(--bg-color);
+    background: var(--very-dark-blue);
 }
 
 .footer-text p {
@@ -949,8 +954,88 @@ img {
     color: var(--main-color);
 }
 
+@media (max-width: 1200px) {
+    .nav li a {
+        font-size: 1rem;
+    }
+
+    .home-content h1,
+    .home-content h1 span {
+        font-size: 6rem;
+    }
+
+    .home-content .text-animate {
+        width: 100%;
+    }
+
+    .home-content .text-animate h3 {
+        font-size: 4rem;
+    } 
+
+    .testimonial .heading {
+        font-size: 5rem;
+        line-height: 30px;
+    }
+
+    .testimonial .message {
+        font-size: 2rem;
+    }
+
+    .testimonial-items {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .testimonial .tablet {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .text .text-info {
+        width: 17rem;
+        font-size: 1.3rem;
+        line-height: 20px;
+    }
+
+    .text .text-width {
+        width: 25rem;
+        font-size: 1.8rem;
+        line-height: 25px;
+    }
+
+    .courses .heading {
+        font-size: 6rem;
+        line-height: 25px;
+    }
+
+    .courses .preview {
+        font-size: 2rem;
+    }
+
+    .courses .courses-items {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .course-image {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .course-content .course-text h4 {
+        font-size: 1.5rem;
+    }
+
+    .course-content .course-text p {
+        width: 100%;
+        font-size: .9rem;
+        line-height: 20px;
+    }
+
+    .contact {
+        min-height: 100vh;
+    }
+}
+
 /* Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .header .logo {
         font-size: 2rem;
     }
@@ -968,5 +1053,318 @@ img {
         font-size: 2rem;
         color: var(--white);
         cursor: pointer;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1,
+    .home-content h1 span {
+        font-size: 4rem;
+    }
+
+    .home-content .text-animate {
+        width: 100%;
+    }
+
+    .home-content .text-animate h3 {
+        font-size: 3rem;
+    }
+
+    .home-about-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .testimonial .heading {
+        font-size: 3.5rem;
+    }
+
+    .testimonial .message {
+        font-size: 1.1rem;
+    }
+
+    .text .text-info {
+        font-size: 1.6rem;
+        padding: 0px 4%;
+    }
+
+    .text .text-width {
+        font-size: 1.6rem;
+        padding: 0px;
+    }
+
+    .courses .preview {
+        font-size: 1rem;
+    }
+
+    .course-content .course-text h4 {
+        font-size: 2.5em;
+    }
+
+    .course-content .course-text p {
+        width: 100%;
+    }
+
+    .education .heading {
+        font-size: 4.5rem;
+    }
+
+    .education-column .title {
+        font-size: 3rem;
+        margin-left: 1.2rem;
+    }
+
+    .education-column {
+        padding-left: 5px;
+    }
+
+    .education-box .education-content {
+        padding-left: 1.5rem;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 20px 4%;
+    }
+
+    .footer-iconTop {
+        margin-bottom: 2rem;
+    }
+
+    .footer-text p {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .home-content h1,
+    .home-content h1 span {
+        font-size: 3.5rem;
+    }
+
+    .home-content .text-animate h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-about-content h3 {
+        font-size: 2.1rem;
+    }
+
+    .testimonial .heading {
+        font-size: 2.8rem;
+    }
+
+    .testimonial .message {
+        font-size: .9rem;
+    }
+
+    .text .text-info,
+    .text .text-width {
+        width: 24rem;
+        font-size: 1.2rem;
+        padding: 0px 4%;
+    }
+
+    .courses .heading {
+        font-size: 4rem;
+    }
+
+    .courses .preview {
+        font-size: .8rem;
+    }
+
+    .contact h2,
+    .contact h2 span {
+        font-size: 4rem;
+    }
+
+    .contact form .input-box .input-field input,
+    .contact form .textarea-field textarea {
+        font-size: 1rem;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 240px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header {
+        height: 30px;
+    }
+
+    .logo {
+        font-size: .5rem;
+    }
+
+    .home-text-content {
+        width: 100%;
+        padding: 3rem 4% 4rem;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1,
+    .home-content h1 span {
+        font-size: 2.5rem;
+    }
+
+    .home-content .text-animate {
+        width: 100%;
+    }
+
+    .home-content .text-animate h3 {
+        font-size: 1.6rem;
+    }
+
+    .home-text-content .home-content p {
+        font-size: .8rem;
+    }
+
+    .btn-box {
+        width: 100%;
+        margin-bottom: 3rem;   
+    }
+
+    .btn-box .btn {
+        width: 8rem;
+        font-size: 1rem;            
+    }
+
+    .home-socials {
+        width: 140px;
+    }
+
+    .home-socials a {
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+    }
+
+    .heading, .heading span {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-about-img {
+        width: 15rem;
+        height: 15rem;
+        margin-bottom: 2rem;
+    }
+
+    .home-about-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-about-content p {
+        width: 100%;
+        font-size: .8rem;
+    }
+
+    .testimonial {
+        padding: 3rem 4%;
+    }
+
+    .testimonial .heading {
+        font-size: 1.8rem;
+        line-height: 45px;
+    }
+
+    .testimonial .message {
+        font-size: .5rem;
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-items {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .text span h6 {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    .text span p {
+        font-size: 1.5rem;
+    }
+
+    .text .text-info {
+        width: 18rem;
+        font-size: 1rem;
+        line-height: 20px;
+    }
+
+    .courses {
+        padding: 3rem 4%;
+    }
+
+    .courses .heading {
+        font-size: 2.5rem;
+    }
+
+    .courses .preview {
+        font-size: .6rem;
+        margin-bottom: 2rem;
+    }
+
+    .courses .courses-items {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    }
+
+    .course-content .course-text p {
+        width: 100%;
+        font-size: .8rem;
+        line-height: 15px;
+    }
+
+    .testimonial .tablet {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    }
+
+    .education {
+        padding: 7rem 4% 4rem;
+    }
+
+    .education .heading {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .education .title {
+        font-size: 2rem;
+    }
+
+    .education-content .content {
+        padding: 1.5rem 1rem;
+    }
+
+    .education-content .content h3 {
+        font-size: 2rem;
+    }
+
+    .education-content .content p {
+        width: 100%;
+        font-size: .8rem;
+    }
+
+    .skills .title {
+        font-size: 2rem;
+    }
+
+    .skills-content .progress h3 {
+        font-size: 1rem;
+    }
+
+    .skills-content .progress h3 span {
+        font-size: 1.2rem;
     }
 }
